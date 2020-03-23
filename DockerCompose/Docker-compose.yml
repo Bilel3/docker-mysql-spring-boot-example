@@ -1,15 +1,20 @@
 version: '3'
 services:
   users-mysql:
+    container_name: users-mysql
     build:
-     context: ./dir
+     context: ../
      dockerfile: Dockerfile
      #Optional
      args:
        buildno: 1
     ports:
       - "8086:8086"
-  db:
+    links:
+      - "some-mysql:mysql"
+    
+  some-mysql:
+    container_name: some-mysql
     image: "mysql:5.7"
     restart: always
     environment:
