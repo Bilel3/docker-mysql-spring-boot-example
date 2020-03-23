@@ -3,7 +3,7 @@ services:
   users-mysql:
     container_name: users-mysql
     build:
-     context: ../
+     context: .
      dockerfile: Dockerfile
      #Optional
      args:
