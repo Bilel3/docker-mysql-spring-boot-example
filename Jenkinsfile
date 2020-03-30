@@ -10,7 +10,6 @@ pipeline {
         stage('maven install') {
                 steps {
                     sh 'mvn clean install -Dmaven.test.skip=true'
-                   sh 'mvn sonar:sonar'
                 }
               }
            stage('Check code Quality') {
